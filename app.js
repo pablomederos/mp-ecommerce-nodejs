@@ -54,9 +54,9 @@ app.get('/detail', async function (req, res) {
             default_installments: 6
         },
         back_urls: {
-            "success": "http://localhost:3000/successPayment",
-            "failure": "http://localhost:3000/failurePayment",
-            "pending": "http://localhost:3000/pendingPayment"
+            "success": "https://e-commerce-mp.herokuapp.com/successPayment",
+            "failure": "https://e-commerce-mp.herokuapp.com/failurePayment",
+            "pending": "https://e-commerce-mp.herokuapp.com/pendingPayment"
         },
         auto_return: 'approved',
     };
