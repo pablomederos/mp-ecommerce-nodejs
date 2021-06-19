@@ -24,7 +24,6 @@ app.get('/', function (req, res) {
 const jsonParser = express.json()
 
 app.get('/detail', async function (req, res) {
-    console.table(req.query);
     let preference = {
         external_reference: 'pablomedeross@gmail.com',
         items: [{
@@ -59,11 +58,11 @@ app.get('/detail', async function (req, res) {
             "pending": "https://e-commerce-mp.herokuapp.com/pendingPayment"
         },
         auto_return: 'approved',
+        notification_url:"https://e-commerce-mp.herokuapp.com/mp-notifications",
     };
 
     try {
         const response = await mercadopago.preferences.create(preference)
-        console.log(response);
         const options = {...req.query, id: response.body.id}
 
         res.render('detail', options);
