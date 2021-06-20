@@ -31,6 +31,7 @@ app.get('/detail', async function (req, res) {
             title: req.query.title,
             unit_price: Number(req.query.price),
             quantity: Number(req.query.unit),
+            description: req.query.title,
         }],
         payer: {
             phone: {
